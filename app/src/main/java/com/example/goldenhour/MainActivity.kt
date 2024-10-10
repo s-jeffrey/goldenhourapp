@@ -1,6 +1,7 @@
 package com.example.goldenhour
 
 import android.Manifest
+import java.time.LocalDate
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -239,9 +240,10 @@ class MainActivity : ComponentActivity() {
          * https://web.archive.org/web/20161202180207/http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
          */
 
-        val day = 9
-        val month = 10
-        val year = 2024
+        val currentDate = LocalDate.now()
+        val day = currentDate.dayOfMonth
+        val month = currentDate.monthValue
+        val year = currentDate.year
         val latitude = latitude
         val longitude = longitude
         val zenith = 90.0
